@@ -26,7 +26,7 @@ public class CharacterController2D : MonoBehaviour
     private float timeStamp;
     [SerializeField] private bool m_IsGrounded;            // Whether or not the player is grounded.
     [SerializeField] private int canJump = 0;              // Count of remaining player jumps.
-    [SerializeField] private bool wallJump = false;        
+    [SerializeField] private bool wallJump = false;        //
     
  
 	private void Awake()
