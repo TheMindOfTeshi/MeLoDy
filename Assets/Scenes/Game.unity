@@ -709,13 +709,13 @@ MonoBehaviour:
   sounds:
   - name: PlayerJump
     clip: {fileID: 8300000, guid: a68f7936e0634714ba07576839c79d2c, type: 3}
-    volume: 0.097
+    volume: 0.019
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Theme
     clip: {fileID: 8300000, guid: 9284e8dba21bc9b42898a93aabba103a, type: 3}
-    volume: 0.359
+    volume: 0.005
     pitch: 1.02
     loop: 1
     source: {fileID: 0}
