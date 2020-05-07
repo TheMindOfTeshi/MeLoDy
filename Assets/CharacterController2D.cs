@@ -85,6 +85,7 @@ public class CharacterController2D : MonoBehaviour
     public void Jump()
     {
         if (canJump >= 1) {
+            FindObjectOfType<AudioManager>().Play("PlayerJump");
             m_Rigidbody2D.velocity = Vector2.zero;
             m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             canJump--;
