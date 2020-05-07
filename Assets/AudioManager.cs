@@ -12,15 +12,15 @@ public class AudioManager : MonoBehaviour
     void Awake()
     {
 
-        if(instance == null){
-            instance = this;
-        }
-        else{
+        if(instance == null){                       // Checks for an instance of the AudioManager in the scene if there is no instance it's set to this instance.
+            instance = this;                        
+    }
+        else{                                       
             Destroy(gameObject);
             return;
         }
 
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);                          // Continues to play even though scenes are swapped
 
         foreach(Sound s in sounds){                             // Each Sound in the Sound array gets his components added like volume.
             s.source = gameObject.AddComponent<AudioSource>();
