@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));                                      //Animator is set, so it can be evaluated for the animation, if the player is moving.
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -32,21 +32,21 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if ((Input.GetKeyDown(KeyCode.Q)  || Input.GetKeyDown(KeyCode.E)) && !dashCD) {
+        if ((Input.GetKeyDown(KeyCode.Q)  || Input.GetKeyDown(KeyCode.E)) && !dashCD) {             //Check for the dash buttons input
 
             dashCD = controller.Dash(dashCD);
             timeStamp = Time.time + 0.35;
+            animator.SetBool("Dash", true);                                                            //Animator is set, so if dash is triggered, the dash animation is played.
             
+        }
+        else{
+            animator.SetBool("Dash", false);
         }
 
         if (timeStamp <= Time.time)
         {
             dashCD = false;
         }
-
-
-
-
 
     }
 

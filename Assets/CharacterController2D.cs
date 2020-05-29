@@ -89,20 +89,23 @@ public class CharacterController2D : MonoBehaviour
             m_Rigidbody2D.velocity = Vector2.zero;
             m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             canJump--;
-        }
+        }   //Checks if the player has a jump action left and if so playes the jump sound and applies force vertically.
     }
 
-    public bool Dash(bool dashCD) {
+    public bool Dash(bool dashCD) 
+    {
 
         if (Input.GetKeyDown(KeyCode.E)) {
+            FindObjectOfType<AudioManager>().Play("Dash");
             m_Rigidbody2D.AddForce(new Vector2(m_dashSpeed, 0f));
             timeStamp = Time.time + 1;
             dashCD = true;
             return dashCD;
         }
         if (Input.GetKeyDown(KeyCode.Q)) {
-        m_Rigidbody2D.AddForce(new Vector2(-m_dashSpeed, 0f));
-        dashCD = true;
+            FindObjectOfType<AudioManager>().Play("Dash");
+            m_Rigidbody2D.AddForce(new Vector2(-m_dashSpeed, 0f));
+            dashCD = true;
             return dashCD;
         }
 
