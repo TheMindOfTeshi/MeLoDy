@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManager;
+using UnityEngine.SceneManagement;
 
 public class MenuCheck : MonoBehaviour
 {
@@ -9,9 +9,9 @@ public class MenuCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(Keycode.Escape)){
-            SceneManager.UnloadSceneAsync(1);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+            SceneManager.LoadScene("Menu");
         }
     }
 }
